@@ -10,7 +10,7 @@ hidePopupButton.onclick = function(element) {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         chrome.tabs.executeScript(tabs[0].id, { code: 'document.body.style.overflow = "";' });
         chrome.tabs.executeScript(tabs[0].id, {
-            code: 'document.getElementsByClassName("fc-ab-root")[0].style.display = "none !impotant";'
+            code: 'document.getElementsByClassName("fc-ab-root")[0].setAttribute("style", "display: none !important");'
         });
         window.close();
     });
